@@ -64,6 +64,18 @@ public class GameImpl implements Game{
         
         checkValidNumberRange();
         
+        if (validNumberRange) {
+            if (guess > number){
+                biggest = guess - 1;
+            }
+            
+            if (guess < number) {
+                smallest = guess + 1;
+            }
+        }
+        
+        remainingGuesses--;
+        
     }
 
     @Override
