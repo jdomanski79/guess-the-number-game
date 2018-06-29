@@ -2,6 +2,9 @@ package pl.jdomanski;
 
 import java.util.Random;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class NumberGeneratorImpl implements NumberGenerator{
 
     //== fields ==
