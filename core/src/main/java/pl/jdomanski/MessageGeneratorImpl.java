@@ -27,7 +27,7 @@ public class MessageGeneratorImpl implements MessageGenerator{
 
     // == public methods == 
        }
-    @Override
+
     public String getMainMessage() {
         return "Number is between " + 
                 game.getSmallest() + 
@@ -36,7 +36,7 @@ public class MessageGeneratorImpl implements MessageGenerator{
                 ". Can you guess it?";
     }
 
-    @Override
+
     public String getResultMessage() {
         if(game.isGameWon()){
             return "You guessed it! The number was " + game.getNumber() + ". ";

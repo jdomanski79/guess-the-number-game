@@ -5,6 +5,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+
 @Component
 public class GameImpl implements Game{
     
@@ -30,8 +32,7 @@ public class GameImpl implements Game{
 //    }
     
     // == public methods ==
-    
-    @Override
+    @PostConstruct
     public void reset() {
         smallest = 0;
         guess = 0;
@@ -41,37 +42,30 @@ public class GameImpl implements Game{
         log.debug("the number is {}", number);
     }
     
-    @Override
     public int getNumber() {
         return number;
     }
 
-    @Override
     public int getGuess() {
         return guess;
     }
 
-    @Override
-    public void seGuess(int guess) {
+    public void setGuess(int guess) {
         this.guess = guess;        
     }
 
-    @Override
     public int getSmallest() {
         return smallest;
     }
 
-    @Override
     public int getBiggest() {
         return biggest;
     }
 
-    @Override
     public int getRemainingGuesses() {
         return remainingGuesses;
     }
 
-    @Override
     public void check() {
         
         checkValidNumberRange();
@@ -90,17 +84,14 @@ public class GameImpl implements Game{
         
     }
 
-    @Override
     public boolean isValidNumberRange() {
         return validNumberRange;
     }
 
-    @Override
     public boolean isGameWon() {
         return guess == number;
     }
 
-    @Override
     public boolean isGameLost() {
         return !isGameWon() && remainingGuesses <= 0;
     }

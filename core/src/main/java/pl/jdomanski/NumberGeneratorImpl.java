@@ -13,12 +13,10 @@ public class NumberGeneratorImpl implements NumberGenerator{
     private int maxNumber = 100;
     
     // == public methods ==
-    @Override
     public int next() {
         return random.nextInt(maxNumber);
     }
 
-    @Override
     public int getMaxNumber() {
         return this.maxNumber;
     }

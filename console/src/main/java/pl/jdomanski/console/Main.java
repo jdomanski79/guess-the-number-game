@@ -33,9 +33,9 @@ public class Main {
         
         // get game bean from content
         
-        Game game = context.getBean(GameImpl.class);
+        //Game game = context.getBean(GameImpl.class);
         
-        game.reset();
+        //game.reset();
         
         //get messagegenerator bean
         MessageGenerator messageGenerator = context.getBean(MessageGeneratorImpl.class);
