@@ -12,7 +12,6 @@ public class MessageGeneratorImpl implements MessageGenerator{
     // == fields ==
     @Autowired
     private Game game;
-    private int guessCount = 10;
     
     // == constructors ==
 //    @Autowired
@@ -33,7 +32,8 @@ public class MessageGeneratorImpl implements MessageGenerator{
                 game.getSmallest() + 
                 " and " +
                 game.getBiggest() + 
-                ". Can you guess it?";
+                ". Can you guess it? You have "+
+                game.getGuessCount() + " guesses";
     }
 
 
@@ -44,7 +44,7 @@ public class MessageGeneratorImpl implements MessageGenerator{
             return "You lost. The number was " + game.getNumber() + ".";
         } else if (!game.isValidNumberRange()){
             return "Invalid number range!";
-        } else if(game.getRemainingGuesses() == guessCount){
+        } else if(game.getRemainingGuesses() == game.getGuessCount()){
             return "What is your first guess?";
         } else {
             

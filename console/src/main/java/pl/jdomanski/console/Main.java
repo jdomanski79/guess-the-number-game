@@ -23,27 +23,27 @@ public class Main {
         // create context (container)
         //ConfigurableApplicationContext context = new ClassPathXmlApplicationContext(CONFIG_LOCATION);
         ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-        NumberGenerator numberGenerator = context.getBean(NumberGenerator.class);
+        //NumberGenerator numberGenerator = context.getBean(NumberGenerator.class);
         
         //call method next
-        int number = numberGenerator.next();
+        //int number = numberGenerator.next();
         
         //log the result
-        log.info("number = {}", number);
-        
-        // get game bean from content
-        
-        //Game game = context.getBean(GameImpl.class);
-        
-        //game.reset();
-        
-        //get messagegenerator bean
-        MessageGenerator messageGenerator = context.getBean(MessageGeneratorImpl.class);
-        
-        //call methods
-        log.info(messageGenerator.getMainMessage());
-        log.info(messageGenerator.getResultMessage());
-        //close context
+//        log.info("number = {}", number);
+//        
+//        // get game bean from content
+//        
+//        //Game game = context.getBean(GameImpl.class);
+//        
+//        //game.reset();
+//        
+//        //get messagegenerator bean
+//        MessageGenerator messageGenerator = context.getBean(MessageGeneratorImpl.class);
+//        
+//        //call methods
+//        log.info(messageGenerator.getMainMessage());
+//        log.info(messageGenerator.getResultMessage());
+//        //close context
         context.close();
 
     }
