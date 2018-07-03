@@ -12,15 +12,11 @@ public class GameImpl implements Game{
     
     // == constants ==
     private static final Logger log = LoggerFactory.getLogger(GameImpl.class);
+  
+    private final NumberGenerator numberGenerator;
+    private final int guessCount;
     
     // == fields ==
-    @Autowired
-    private NumberGenerator numberGenerator;
-    
-    @Autowired
-    @GuessCount
-    private int guessCount;
-    
     private int number;
     private int guess;
     private int smallest;
@@ -29,11 +25,12 @@ public class GameImpl implements Game{
     private boolean validNumberRange = true;
     
     // == constructors ==
-    //public GameImpl(){}
     
-//    public GameImpl(NumberGenerator numberGenerator){
-//        this.numberGenerator = numberGenerator;
-//    }
+    @Autowired
+    public GameImpl(NumberGenerator numberGenerator, @GuessCount int guessCount){
+        this.numberGenerator = numberGenerator;
+        this.guessCount = guessCount;
+    }
     
     // == public methods ==
     @PostConstruct

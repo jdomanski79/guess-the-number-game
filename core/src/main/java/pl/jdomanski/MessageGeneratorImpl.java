@@ -5,19 +5,19 @@ import javax.annotation.PostConstruct;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MessageGeneratorImpl implements MessageGenerator{
     // == constants ==
     private final static Logger log = LoggerFactory.getLogger(MessageGeneratorImpl.class);
-    // == fields ==
-    @Autowired
-    private Game game;
+    private final Game game;
     
     // == constructors ==
-//    @Autowired
-//    public MessageGeneratorImpl(Game game){
-//        this.game = game;
-//    }
+    @Autowired
+    public MessageGeneratorImpl(Game game){
+        this.game = game;
+    }
     
     // == init ==
     @PostConstruct
@@ -33,7 +33,7 @@ public class MessageGeneratorImpl implements MessageGenerator{
                 " and " +
                 game.getBiggest() + 
                 ". Can you guess it? You have "+
-                game.getGuessCount() + " guesses";
+                game.getRemainingGuesses()+ " guesses left.";
     }
 
 
