@@ -7,22 +7,30 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Component
+@Getter
 public class GameImpl implements Game{
     
-    // == constants ==
-    private static final Logger log = LoggerFactory.getLogger(GameImpl.class);
-  
+    @Getter(AccessLevel.NONE)  
     private final NumberGenerator numberGenerator;
+    
     private final int guessCount;
     
     // == fields ==
-    private int number;
-    private int guess;
+    private int number;   
     private int smallest;
     private int biggest;
     private int remainingGuesses;
     private boolean validNumberRange = true;
+    
+    @Setter
+    private int guess;
     
     // == constructors ==
     
@@ -43,32 +51,8 @@ public class GameImpl implements Game{
         log.debug("the number is {}", number);
     }
     
-    public int getNumber() {
-        return number;
-    }
-
-    public int getGuess() {
-        return guess;
-    }
-
     public void setGuess(int guess) {
         this.guess = guess;        
-    }
-
-    public int getSmallest() {
-        return smallest;
-    }
-
-    public int getBiggest() {
-        return biggest;
-    }
-
-    public int getRemainingGuesses() {
-        return remainingGuesses;
-    }
-    
-    public int getGuessCount(){
-        return guessCount;
     }
 
     public void check() {
@@ -87,10 +71,6 @@ public class GameImpl implements Game{
         
         remainingGuesses--;
         
-    }
-
-    public boolean isValidNumberRange() {
-        return validNumberRange;
     }
 
     public boolean isGameWon() {

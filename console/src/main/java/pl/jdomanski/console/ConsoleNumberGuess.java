@@ -6,16 +6,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
+
 import pl.jdomanski.Game;
 import pl.jdomanski.MessageGenerator;
 
 import java.util.Scanner;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Component
 public class ConsoleNumberGuess {
 
-    // == constants ==
-    private static final Logger log = LoggerFactory.getLogger(ConsoleNumberGuess.class);
 
     // == fields ==
     @Autowired

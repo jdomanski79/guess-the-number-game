@@ -2,6 +2,8 @@ package pl.jdomanski;
 
 import java.util.Random;
 
+import lombok.Getter;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -11,8 +13,10 @@ public class NumberGeneratorImpl implements NumberGenerator{
     //== fields ==
     private final Random random = new Random();
     
+    @Getter
     private final int maxNumber;
     
+    @Getter
     private final int minNumber;
     
     // == constructor ==
@@ -27,11 +31,4 @@ public class NumberGeneratorImpl implements NumberGenerator{
         return random.nextInt(maxNumber - minNumber) + minNumber;
     }
 
-    public int getMaxNumber() {
-        return this.maxNumber;
-    }
-    
-    public int getMinNumber() {
-        return this.minNumber;
-    }
 }
