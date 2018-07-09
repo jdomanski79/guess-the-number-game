@@ -34,8 +34,7 @@ public class MessageGeneratorImpl implements MessageGenerator{
                 game.getSmallest() + 
                 " and " +
                 game.getBiggest() + 
-                ". Can you guess it? You have "+
-                game.getRemainingGuesses()+ " guesses left.";
+                ". Can you guess it?";
     }
 
 

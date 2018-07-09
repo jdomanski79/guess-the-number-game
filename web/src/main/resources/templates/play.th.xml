@@ -1,0 +1,12 @@
+<thlogic>
+	<attr sel="head"
+			th:replace="~{fragments/head :: headFragment}"/>
+	<attr sel="#main-message"
+			th:text="${__${T(pl.jdomanski.util.AttributeNames).MAIN_MESSAGE}__}"/>
+	<attr sel="#result-message"
+			th:text="${__${T(pl.jdomanski.util.AttributeNames).RESULT_MESSAGE}__}"/>
+	<attr sel="form"
+			th:action="@{__${T(pl.jdomanski.util.GameMappings).PLAY}__}"/>
+	<attr sel="footer"
+			 th:replace="~{fragments/footer :: footerFragment}"/>
+</thlogic>

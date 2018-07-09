@@ -1,7 +1,5 @@
 package pl.jdomanski;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -51,10 +49,6 @@ public class GameImpl implements Game{
         log.debug("the number is {}", number);
     }
     
-    public void setGuess(int guess) {
-        this.guess = guess;        
-    }
-
     public void check() {
         
         checkValidNumberRange();
